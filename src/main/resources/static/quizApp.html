@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interactive Quiz</title>
 
     <link rel="stylesheet" href="/css/quizApp.css">
     <script src="/js/quizLogic.js" defer></script>
@@ -11,11 +11,49 @@
 </head>
 <body>
     
+<header>Interactive Quiz</header>
+
+<form>
+    <section>
+    <fieldset>
+        <legend>
+            Begin Quiz?
+        </legend>
 
 
+
+
+<span id="question" class="question"></span><br>
+
+
+<input type="radio" id="choice1" name="choiceN" value="1">
+<label for="choice1" class="choiceC"></label><br>
+<input type="radio" id="choice2" name="choiceN" value="2">
+<label for="choice2" class="choiceC"></label><br>
+<input type="radio" id="choice3" name="choiceN" value="3">
+<label for="choice3" class="choiceC"></label><br>
+<input type="radio" id="choice4" name="choiceN" value="4">
+<label for="choice4" class="choiceC"></label><br>
+
+<input id="prev" type="submit" value="Previous">
+<input id="next" type="submit" value="Next">
+
+
+
+<input id="begin" type="submit" value="Begin">
+
+
+
+
+
+    </fieldset>
+</section>
+</form>
 
 
 
 
 </body>
 </html>
+
+<!-- document.getElementById( 'elemtId' ).style.display = 'none'; -->

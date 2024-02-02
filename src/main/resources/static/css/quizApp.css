@@ -1,0 +1,39 @@
+.question{
+    display:block;
+    text-align:center;
+} 
+#begin{
+    margin: auto;
+    display: block;
+} 
+#prev{
+    float:left;
+    display:none;
+}
+#next{
+    float:right;
+   display:none;
+
+}   
+/* #question{
+    text-align:center;
+
+}
+.choice{
+    text-align:center;
+
+}*/
+[name=choiceN]{
+    display:none;
+}      
+/* .center{
+    display:none;
+    text-align:center;
+
+}  */
+/* .choiceC{
+    display:inline-block;
+
+  
+
+}   */

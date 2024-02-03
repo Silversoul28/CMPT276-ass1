@@ -14,15 +14,37 @@
     float:right;
    display:none;
 
-}   
+}  
+#answers{
+    display: none;
+    /* visibility: hidden; */
+} 
+#score{
+    display:none;
+    text-align:center;
+}
+
+/* .quiz{
+    display: block;
+    border: 1px solid black;
+} */
+
+ .border{
+    border: 2px solid black;
+    display: block;
+}  
+
 /* #question{
     text-align:center;
 
-}
-.choice{
-    text-align:center;
+} */
+ /* .choiceC{
 
-}*/
+float:right;
+}  */
+/* [name=choiceX]{
+    display:none;
+}    */
 [name=choiceN]{
     display:none;
 }      

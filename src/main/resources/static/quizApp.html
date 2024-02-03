@@ -15,24 +15,23 @@
 
 <form>
     <section>
-    <fieldset>
+    <fieldset id="quiz">
         <legend>
             Begin Quiz?
         </legend>
+<!-- <div id="quiz"> -->
 
-
-
-
+   
 <span id="question" class="question"></span><br>
 
 
-<input type="radio" id="choice1" name="choiceN" value="1">
+<input type="radio" id="choice1" name="choiceN" class="choiceALL" value="0">
 <label for="choice1" class="choiceC"></label><br>
-<input type="radio" id="choice2" name="choiceN" value="2">
+<input type="radio" id="choice2" name="choiceN" class="choiceALL" value="1">
 <label for="choice2" class="choiceC"></label><br>
-<input type="radio" id="choice3" name="choiceN" value="3">
+<input type="radio" id="choice3" name="choiceN" class="choiceALL" value="2">
 <label for="choice3" class="choiceC"></label><br>
-<input type="radio" id="choice4" name="choiceN" value="4">
+<input type="radio" id="choice4" name="choiceN" class="choiceALL" value="3">
 <label for="choice4" class="choiceC"></label><br>
 
 <input id="prev" type="submit" value="Previous">
@@ -41,13 +40,56 @@
 
 
 <input id="begin" type="submit" value="Begin">
-
-
-
-
-
-    </fieldset>
+<!-- 
+</div> -->
+</fieldset>
 </section>
+<fieldset id="score">
+<h1>Your Score Is:</h1><br>
+<span id="fraction"></span>
+</fieldset>
+<fieldset id="answers"> 
+<!-- <div id="answers"> -->
+    <div class="score">
+        
+
+
+
+    </div>
+    <div class="border">
+        <input type="radio" id="choice5" name="choiceX" class="choiceALL" value="0" onclick="return false;">
+        <label for="choice5" class="choiceC"></label><br>
+        <input type="radio" id="choice6" name="choiceX" class="choiceALL" value="1" onclick="return false;">
+        <label for="choice6" class="choiceC"></label><br>
+        <input type="radio" id="choice7" name="choiceX" class="choiceALL" value="2" onclick="return false;">
+        <label for="choice7" class="choiceC"></label><br>
+        <input type="radio" id="choice8" name="choiceX" class="choiceALL" value="3" onclick="return false;">
+        <label for="choice8" class="choiceC"></label><br>
+    </div>
+    <br>
+    <div class="border">
+        <input type="radio" id="choice9" name="choiceY" class="choiceALL" value="0" onclick="return false;">
+        <label for="choice9" class="choiceC"></label><br>
+        <input type="radio" id="choice10" name="choiceY" class="choiceALL" value="1" onclick="return false;">
+        <label for="choice10" class="choiceC"></label><br>
+        <input type="radio" id="choice11" name="choiceY" class="choiceALL" value="2" onclick="return false;">
+        <label for="choice11" class="choiceC"></label><br>
+        <input type="radio" id="choice12" name="choiceY" class="choiceALL" value="3" onclick="return false;">
+        <label for="choice12" class="choiceC"></label><br>
+    </div>
+    <br>
+    <div class="border">
+        <input type="radio" id="choice13" name="choiceZ" class="choiceALL" value="0" onclick="return false;">
+        <label for="choice13" class="choiceC"></label><br>
+        <input type="radio" id="choice14" name="choiceZ" class="choiceALL" value="1" onclick="return false;">
+        <label for="choice14" class="choiceC"></label><br>
+        <input type="radio" id="choice15" name="choiceZ" class="choiceALL" value="2" onclick="return false;">
+        <label for="choice15" class="choiceC"></label><br>
+        <input type="radio" id="choice16" name="choiceZ" class="choiceALL" value="3" onclick="return false;">
+        <label for="choice16" class="choiceC"></label><br>
+    </div>
+</fieldset>
+
 </form>
 
 

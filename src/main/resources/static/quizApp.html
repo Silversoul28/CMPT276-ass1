@@ -16,14 +16,15 @@
 <form>
     <section>
     <fieldset id="quiz">
-        <legend>
-            Begin Quiz?
-        </legend>
-<!-- <div id="quiz"> -->
+        <legend></legend>
 
-   
+<div id="start">
+<h1>Begin Quiz?</h1><br>
+<input id="begin" type="submit" value="Begin">
+</div>
+ 
+<div id="quest">
 <span id="question" class="question"></span><br>
-
 
 <input type="radio" id="choice1" name="choiceN" class="choiceALL" value="0">
 <label for="choice1" class="choiceC"></label><br>
@@ -36,27 +37,20 @@
 
 <input id="prev" type="submit" value="Previous">
 <input id="next" type="submit" value="Next">
-
-
-
-<input id="begin" type="submit" value="Begin">
-<!-- 
-</div> -->
+</div>
 </fieldset>
 </section>
+
+
 <fieldset id="score">
 <h1>Your Score Is:</h1><br>
 <span id="fraction"></span>
 </fieldset>
 <fieldset id="answers"> 
-<!-- <div id="answers"> -->
-    <!-- <div class="score">
-        
 
-
-
-    </div> -->
+    <span id="questionNum1" class="questionNum"></span><br>
     <div class="border">
+        <span id="question1" class="questionn"></span>
         <input type="checkbox" id="choice5" name="choiceX" class="choiceALL" value="0" onclick="return false;">
         <label for="choice5" class="choiceC"></label><br>
         <input type="checkbox" id="choice6" name="choiceX" class="choiceALL" value="1" onclick="return false;">
@@ -67,7 +61,9 @@
         <label for="choice8" class="choiceC"></label><br>
     </div>
     <br>
+    <span id="questionNum2" class="questionNum"></span><br>
     <div class="border">
+        <span id="question2" class="questionn"></span>
         <input type="checkbox" id="choice9" name="choiceY" class="choiceALL" value="0" onclick="return false;">
         <label for="choice9" class="choiceC"></label><br>
         <input type="checkbox" id="choice10" name="choiceY" class="choiceALL" value="1" onclick="return false;">
@@ -78,7 +74,9 @@
         <label for="choice12" class="choiceC"></label><br>
     </div>
     <br>
+    <span id="questionNum3" class="questionNum"></span><br>
     <div class="border">
+        <span id="question3" class="questionn"></span>
         <input type="checkbox" id="choice13" name="choiceZ" class="choiceALL" value="0" onclick="return false;">
         <label for="choice13" class="choiceC"></label><br>
         <input type="checkbox" id="choice14" name="choiceZ" class="choiceALL" value="1" onclick="return false;">

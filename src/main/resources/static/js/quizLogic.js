@@ -3,9 +3,10 @@ const choice1=[6, 4, 3]
 const choice2=[4, 2, 9]
 const choice3=[3, 8, 10]
 const choice4=[1, 16, 16]
-const answers =[2, 3, 4]
+const answers =[1, 2, 3]
 var choice =[-1, -1, -1]
 var count =0;
+var score=0;
 //document.getElementById( 'next' ).style.display = 'none';
 //document.getElementsByClassName( 'right' ).style.display = 'none';
 
@@ -18,7 +19,6 @@ begin.addEventListener('click', function(evt){
     document.getElementsByTagName('legend')[0].innerHTML = "Question "+(count+1)
 
     document.getElementById( 'begin' ).style.display = 'none';
-    document.getElementById( 'prev' ).style.display = 'block';
     document.getElementById( 'next' ).style.display = 'block';
   
 
@@ -40,9 +40,19 @@ begin.addEventListener('click', function(evt){
 var prev = document.querySelector('input[value="Previous"]')//grab the submit button
 prev.addEventListener('click', function(evt){
    evt.preventDefault()
+ 
+   for(var i=0; i<4;i++){
+    if(document.getElementsByClassName('choiceALL')[i].checked==true){
+      choice[count]=document.getElementsByClassName('choiceALL')[i].value;
+    }
+  }
+
    if(count>0){
     count--;
     document.getElementsByClassName('choiceALL')[choice[count]].checked= true;
+   }
+   if(count==0) {
+    document.getElementById( 'prev' ).style.display = 'none';
    }
 
     document.getElementById('next').value="Next";
@@ -62,6 +72,10 @@ prev.addEventListener('click', function(evt){
  next.addEventListener('click',function(evt){
     evt.preventDefault()
 
+    if(individualAns()){
+
+    document.getElementById( 'prev' ).style.display = 'block';
+
     checkPage();
 
     document.querySelector('label[for="choice1"]').innerHTML = choice1[count]
@@ -71,7 +85,7 @@ prev.addEventListener('click', function(evt){
     document.getElementById('question').innerHTML = questions[count]
     document.getElementsByTagName('legend')[0].innerHTML = "Question "+(count+1)
    
-
+    }
     
               //add a spot for caching past answers when the prev button is pressed
         //and add one in the prev event listener as well
@@ -82,8 +96,6 @@ prev.addEventListener('click', function(evt){
 
 
  function checkPage(){
-
-  individualAns();
 
   if(count <1){
      count++;
@@ -99,6 +111,7 @@ prev.addEventListener('click', function(evt){
 
 //for next button
 function individualAns(){
+
 var clicked=false;
   for(var i=0; i<4;i++){
     if(document.getElementsByClassName('choiceALL')[i].checked==true){
@@ -110,7 +123,11 @@ var clicked=false;
   if((choice[count+1]!=-1)&&(count<2)){
     document.getElementsByClassName('choiceALL')[choice[count+1]].checked=true;
   }
-
+  if(clicked!=true){
+    alert("Select an Option Before Continuing");
+    return 0;
+  }
+return 1;
 } 
 //for prev button
 // function answerCache(){
@@ -128,19 +145,35 @@ var clicked=false;
     document.getElementById("score").style.display='block';
 
    for(var i=0; i<3;i++){
-   document.getElementsByClassName('choiceC')[(i+1)*4].innerHTML = choice1[i]
-   document.getElementsByClassName('choiceC')[((i+1)*4)+1].innerHTML = choice2[i]
-   document.getElementsByClassName('choiceC')[((i+1)*4)+2].innerHTML = choice3[i]
-   document.getElementsByClassName('choiceC')[((i+1)*4)+3].innerHTML = choice4[i]
-   document.getElementsByClassName('choiceALL')[(eval((i+1)*4)+eval(choice[i]))].checked = true;
+
+    document.getElementsByClassName('choiceC')[(i+1)*4].innerHTML = choice1[i]
+    document.getElementsByClassName('choiceC')[((i+1)*4)+1].innerHTML = choice2[i]
+    document.getElementsByClassName('choiceC')[((i+1)*4)+2].innerHTML = choice3[i]
+    document.getElementsByClassName('choiceC')[((i+1)*4)+3].innerHTML = choice4[i]
+
+    var choose=document.getElementsByClassName('choiceALL')[(eval((i+1)*4)+eval(choice[i]))];
+    var ans=document.getElementsByClassName('choiceALL')[(eval((i+1)*4)+eval(answers[i]))];
+    if(choice[i]==answers[i]){
+      score++;
+      ans.checked = true;
+      ans.style.accentColor='green';
+     }else{
+   choose.checked = true;
+   choose.style.accentColor='red';
+   ans.checked = true;
+   ans.style.accentColor='green';
+     }
 
    }
-
+   document.getElementById('fraction').innerHTML=score+"/"+"3";
   }
+
+ 
 
 
   
-
+  //  ans.style.backroundColor='red';
+  //  ans.style.boxSizing='border-box';
 
     //here goes function or class that will capture and record the answers
   
